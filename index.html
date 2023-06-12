@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <!--PHOSPHOR ICONS-->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+    <!--FONT-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:ital,wght@0,200;0,300;0,400;0,500;0,600;0,700;0,800;1,200;1,300;1,400;1,500;1,600;1,700;1,800&display=swap" rel="stylesheet">
+    <title>Modèle</title>
+</head>
+<body>
+    <div class="container">
+        <main class="board">
+            <div class="column todo" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>To-do</h2>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="1">
+                    <span class="circle"></span>
+                    <h3>Shop groceries</h3>
+                </article>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="2">
+                    <span class="circle"></span>
+                    <h3>Repair the car</h3>
+                </article>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="3">
+                    <span class="circle"></span>
+                    <h3>Buy flowers</h3>
+                </article>
+            </div>
+            <div class="column in-progress" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>In-progress</h2>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="4">
+                    <span class="circle"></span>
+                    <h3>Lawn the grass</h3>
+                </article>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="5">
+                    <span class="circle"></span>
+                    <h3>Prepare diner</h3>
+                </article>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="6">
+                    <span class="circle"></span>
+                    <h3>Cut roses</h3>
+                </article>
+            </div>
+            <div class="column done" ondrop="drop(event)" ondragover="allowDrop(event)">
+                <h2>Done</h2>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="7">
+                    <span class="circle"></span>
+                    <h3>Vacuum</h3>
+                </article>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="8">
+                    <span class="circle"></span>
+                    <h3>Iron</h3>
+                </article>
+                <article class="card" draggable="true" ondragstart="drag(event)" data-id="9">
+                    <span class="circle"></span>
+                    <h3>Help with homework</h3>
+                </article>
+            </div>
+        </main>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

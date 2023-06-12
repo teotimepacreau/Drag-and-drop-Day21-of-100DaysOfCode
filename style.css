@@ -1,0 +1,176 @@
+/* CSS RESET */
+/* Box sizing rules */
+*,
+*::before,
+*::after {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+/* Remove default list styles */
+ul, ol, li {
+  list-style: none;
+}
+
+/* Set core body defaults */
+body {
+  text-rendering: optimizeLegibility;
+}    
+
+/* Set core root defaults */
+html {
+  scroll-behavior: smooth;
+}
+    
+/* A element that don't have a class get default styles */
+a:not([class]) {
+  text-decoration-skip-ink: auto;
+}
+    
+/* Make images easier to work with */
+img,
+picture {
+  max-width: 100%; /* img should never overflow past the available space*/
+  display: block; /* avoid blank bottom*/
+  height: auto;/*preserve aspect ratio*/
+}
+
+/* More consistent, styleable hr*/
+hr {
+  border-width: 1px 0 0 0;
+  color: inherit;
+  height: 0;
+  overflow: visible;
+}
+
+/* Remove built-in form typography styles */
+input, button, textarea, select {
+  font: inherit;
+  color: inherit;
+}
+
+/* More space above the underline */
+a {
+  text-underline-offset: 0.2ex;
+}
+
+
+/*body *{
+    outline : 2px solid red ;
+}*/
+
+/* CUSTOM PROPERTIES */
+
+:root {
+    --rythme: 1.5rem;
+    --outer-radius: calc(0.3*var(--rythme));
+    --padding: var(--rythme);
+    --inner-radius: calc(var(--outer-radius) - var(--padding));
+    --boxshadow: #4544444d;
+    --tailleparagraphe: 1rem;
+    --taillesoustitre: 1.618rem;
+    --tailleh4: 2.618rem;
+    --tailleh3: 4.236rem;
+    --tailleh2: 6.854rem;
+    --tailleh1:  11.089rem;
+    --bg: oklch(95% 0.001 250);/*C 0-0.37  L0-100 H0-360*/
+    --grey10: oklch(50% 0 0 / 10%);
+    --brown65: oklch(65% 0.04 100);
+    --brown80: oklch(80% 0.04 100);
+    --brown95: oklch(95% 0.04 100);
+    --brown98: oklch(98% 0.07 100);
+  }
+
+/* TYPE SETTINGS */
+p {
+  font-size: var(--tailleparagraphe);
+  line-height: 1.5;
+}
+
+
+
+h2 {
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-size: var(--tailleh3);
+  letter-spacing: -0.04rem;
+  line-height: 1.3;
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--taillesoustitre);
+  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-weight: 300;
+}
+
+body {
+  background-color: var(--grey10);
+  min-height: 100dvh;
+}
+
+.container {
+  margin-block: calc(3*var(--rythme));
+}
+
+.board {
+  display: flex;
+  gap: calc(2*var(--rythme));
+  justify-content: center;
+  margin: auto;
+}
+
+.column {
+  display: flex;
+  flex-direction: column;
+  gap: var(--rythme);
+  padding: var(--rythme);
+  background-color: var(--brown95);
+  border-radius: var(--outer-radius);
+  box-shadow: -2px 2px 5px 0px var(--boxshadow);
+  transition: all 0.1s ease-out;
+}
+.column.drop{
+  outline: 2px ridge var(--brown65);
+}
+.column.drop article{
+  pointer-events: none;
+}
+.card {
+  cursor: grab;
+  transition: all 0.3s cubic-bezier(0.47, 0, 0.745, 0.715);
+  padding-block: 1.5ch;
+  padding-inline: 3ch;
+  background-color: var(--brown98);
+  box-shadow: -1px 1px 5px 0px var(--boxshadow);
+  border-radius: 0.2rem;
+  position: relative;
+}
+
+.card:active {
+  cursor: grabbing;
+}
+
+.card.dragging{
+  opacity: .5;
+  transform: scale(.8);
+}
+
+.circle {
+  position: absolute;
+  box-shadow: -2px 2px 6px 0px var(--boxshadow);
+  top: 0.5rem;
+  right: 0.5rem;
+  height: 12px;
+  width: 12px;
+  background-color: rgb(188, 128, 59);
+  border-radius: 50%;
+}
+
+.in-progress {
+  background-color: var(--brown80);
+}
+
+.done {
+  background-color: var(--brown65);
+}
